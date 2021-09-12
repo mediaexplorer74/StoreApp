@@ -4,6 +4,11 @@ StoreApp is a MS Store micro-clone using .Net Standard written in C#.
 This project started initially as a nighits/weekend project of mine to better understand 
 MS Store "System". =)
 
+# Screenshots
+![Shot 1](https://github.com/mediaexplorer74/StoreApp/blob/main/shot1.png)
+![Shot 2](https://github.com/mediaexplorer74/StoreApp/blob/main/shot2.png)
+![Shot 3](https://github.com/mediaexplorer74/StoreApp/blob/main/shot3.png)
+
 The goals for this project were simple:
 - Write my first multi-threading UWP app using C#
 - Learn the inner workings of MS Store "entity"
