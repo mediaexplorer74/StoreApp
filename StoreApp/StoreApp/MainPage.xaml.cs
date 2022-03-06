@@ -28,28 +28,47 @@ namespace StoreApp
             // in order to call methods that are in this class.
             Current = this;
             
-            SampleTitle.Text = FEATURE_NAME;
+
+            Windows.ApplicationModel.Resources.ResourceLoader resourceLoader 
+                = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+
+            // show menu "title" (greeting at local language)
+            SampleTitle.Text = resourceLoader.GetString("HelloWorld") + " MicroStore 0.2-beta";//resourceLoader.GetString("HelloWorld");
+            //SampleTitle.Text = FEATURE_NAME;
+
+
+            //scenarios.Add(new Scenario { Title = "File Download", ClassType = typeof(DownloadZone) });
+            scenarios.Add(new Scenario { Title = resourceLoader.GetString("DownloadZone"), 
+                ClassType = typeof(DownloadZone) });
+
+            scenarios.Add(new Scenario { Title = resourceLoader.GetString("SettingsPage"),
+                ClassType = typeof(SetPage) });
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             // Populate the scenario list from the SampleConfiguration.cs file
             var itemCollection = new List<Scenario>();
+            
             int i = 1;
+            
             foreach (Scenario s in scenarios)
             {
-                itemCollection.Add(new Scenario { Title = $"{i++}) {s.Title}", ClassType = s.ClassType });
+                // itemCollection.Add(new Scenario { Title = $"{i++} {s.Title}", ClassType = s.ClassType });
+               itemCollection.Add(new Scenario { Title = $"{i++} {s.Title}", ClassType = s.ClassType });
             }
             ScenarioControl.ItemsSource = itemCollection;
 
+            
             if (Window.Current.Bounds.Width < 640)
             {
-                ScenarioControl.SelectedIndex = -1;
+                ScenarioControl.SelectedIndex = 0;//-1;
             }
             else
             {
                 ScenarioControl.SelectedIndex = 0;
             }
+            
         }
 
         /// <summary>
@@ -64,7 +83,9 @@ namespace StoreApp
             NotifyUser(String.Empty, NotifyType.StatusMessage);
 
             ListBox scenarioListBox = sender as ListBox;
+
             Scenario s = scenarioListBox.SelectedItem as Scenario;
+            
             if (s != null)
             {
                 ScenarioFrame.Navigate(s.ClassType);
@@ -96,7 +117,8 @@ namespace StoreApp
             }
             else
             {
-                var task = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => UpdateStatus(strMessage, type));
+                var task = Dispatcher.RunAsync(CoreDispatcherPriority.Normal, 
+                    () => UpdateStatus(strMessage, type));
             }
         }
 
@@ -115,7 +137,8 @@ namespace StoreApp
             StatusBlock.Text = strMessage;
 
             // Collapse the StatusBlock if it has no text to conserve real estate.
-            StatusBorder.Visibility = (StatusBlock.Text != String.Empty) ? Visibility.Visible : Visibility.Collapsed;
+            StatusBorder.Visibility = (StatusBlock.Text != String.Empty) 
+                ? Visibility.Visible : Visibility.Collapsed;
             if (StatusBlock.Text != String.Empty)
             {
                 StatusBorder.Visibility = Visibility.Visible;
@@ -137,7 +160,8 @@ namespace StoreApp
 
         async void Footer_Click(object sender, RoutedEventArgs e)
         {
-            await Windows.System.Launcher.LaunchUriAsync(new Uri(((HyperlinkButton)sender).Tag.ToString()));
+            await Windows.System.Launcher.LaunchUriAsync
+                (new Uri(((HyperlinkButton)sender).Tag.ToString()));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -145,6 +169,7 @@ namespace StoreApp
             Splitter.IsPaneOpen = !Splitter.IsPaneOpen;
         }
     }
+
     public enum NotifyType
     {
         StatusMessage,

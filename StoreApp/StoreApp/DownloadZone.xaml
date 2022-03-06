@@ -14,18 +14,29 @@
                 Download zone.
             </TextBlock-->
 
-            <TextBlock Text="Search query: " Margin="0,8,10,0"/>
+            <!--Text="Search query: " -->
+                <TextBlock x:Uid="SearchQuery" 
+                       x:Name="SearchQueryA" 
+                       Text="Search queryyy: "
+                       Margin="0,8,10,0"/>
+            
             <TextBox x:Name="searchQueryField" InputScope="Url" Text="" />
 
             <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,10,0,0">
-                <Button x:Name="StartSearchButton" Content="Search + Multidownload (into Pictures folder)" Margin="0,0,10,0" Click="StartSearch_Click"/>
+                <Button x:Uid="SearchAndDownload"
+                        x:Name="StartSearchButton" 
+                        Content="Search + Multidownload (into Pictures folder)" 
+                        Margin="0,0,10,0" Click="StartSearch_Click"/>
                 <!--Button x:Name="StartHighPrioritySearchButton" Content="Start High Priority Search" Margin="0,0,10,0" Click="StartHighPrioritySearch_Click"/-->
             </StackPanel>
 
             <!--TextBlock Text="Remote address: " Margin="0,8,10,0"/>
             <TextBox x:Name="serverAddressField" InputScope="Url" Text="" /-->
+
+            <TextBlock x:Uid="LocalFilename"
+                       x:Name="FileNameA"
+                Text="Local file name: " Margin="0,8,17,0"/>
             
-            <TextBlock Text="Local file name: " Margin="0,8,17,0"/>
             <TextBox x:Name="fileNameField" Text="DownloadedFile.appxbundle"/>
             
             <!--StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,10,0,0">

@@ -1,4 +1,4 @@
-﻿// DownloadZone
+﻿// Settings Page
 
 using System;
 using System.Collections.Generic;
@@ -15,42 +15,32 @@ using Windows.Web;
 using StoreLib.Models;
 using StoreLib.Services;
 
+
+// 
 namespace StoreApp
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class DownloadZone : Page, IDisposable
+    public sealed partial class SetPage : Page, IDisposable
     {
         // A pointer back to the main page.  This is needed if you want to call methods in MainPage such
         // as NotifyUser()
         public MainPage rootPage = MainPage.Current;
+        
 
        
 
         private List<DownloadOperation> activeDownloads;
         private CancellationTokenSource cts;
 
-        public DownloadZone()
+        public SetPage()
         {
-           
-
             cts = new CancellationTokenSource();
 
             this.InitializeComponent();
 
             //this.rootPage = MainPage.Current;
-
-            Windows.ApplicationModel.Resources.ResourceLoader resourceLoader
-             = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
-
-            // show menu "title" (greeting at local language)
-            SearchQueryA.Text = resourceLoader.GetString("SearchQuery");
-
-
-            StartSearchButton.Content = resourceLoader.GetString("SearchAndDownload");
-
-            FileNameA.Text = resourceLoader.GetString("LocalFilename");
 
         }
 
@@ -65,6 +55,7 @@ namespace StoreApp
             GC.SuppressFinalize(this);
         }
 
+        /*
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
         /// </summary>
@@ -99,12 +90,7 @@ namespace StoreApp
                 return;
             }
 
-
-            Windows.ApplicationModel.Resources.ResourceLoader resourceLoader
-             = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
-
-            //Log("Loading background downloads: " + downloads.Count);
-            Log( resourceLoader.GetString("LoadingBackgroundDownloads") +": " + downloads.Count);
+            Log("Loading background downloads: " + downloads.Count);
 
             if (downloads.Count > 0)
             {
@@ -128,6 +114,7 @@ namespace StoreApp
             }
         }
 
+        
         private async void StartDownload(BackgroundTransferPriority priority)
         {
             // Validating the URI is required since it was received from an untrusted source (user input).
@@ -159,7 +146,7 @@ namespace StoreApp
             StorageFile destinationFile;
             try
             {
-                StorageFolder picturesLibrary = await KnownFolders.GetFolderForUserAsync(null /* current user */, KnownFolderId.PicturesLibrary);
+                StorageFolder picturesLibrary = await KnownFolders.GetFolderForUserAsync(null, KnownFolderId.PicturesLibrary);
                 destinationFile = await picturesLibrary.CreateFileAsync(
                     destination,
                     CreationCollisionOption.GenerateUniqueName);
@@ -519,7 +506,7 @@ namespace StoreApp
             StorageFile destinationFile;
             try
             {
-                StorageFolder picturesLibrary = await KnownFolders.GetFolderForUserAsync(null /* current user */, KnownFolderId.PicturesLibrary);
+                StorageFolder picturesLibrary = await KnownFolders.GetFolderForUserAsync(null, KnownFolderId.PicturesLibrary);
                 destinationFile = await picturesLibrary.CreateFileAsync(
                     destination,
                     CreationCollisionOption.GenerateUniqueName);
@@ -541,7 +528,7 @@ namespace StoreApp
             // Attach progress and completion handlers.
             await HandleDownloadAsync(download, true);
         }//AutoDownload end
-
+        */
 
     }// class 
 

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="Store.App.V1" Publisher="CN=mediaexplorer" Version="0.0.1.0" />
+  <Identity Name="Store.App.V101" Publisher="CN=media" Version="0.2.0.0" />
   <mp:PhoneIdentity PhoneProductId="d63dfff4-b11f-406d-a938-be6fdaab46bf" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>Store.App.v1</DisplayName>
+    <DisplayName>Store.App.v101</DisplayName>
     <PublisherDisplayName>mediaexplorer</PublisherDisplayName>
     <Logo>Assets\StoreLogo-sdk.png</Logo>
   </Properties>

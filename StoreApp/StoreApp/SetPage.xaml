@@ -1,0 +1,40 @@
+﻿<Page x:Name="SettingsPage" 
+      x:Class="StoreApp.SetPage" 
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+      xmlns:local="using:StoreApp" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      mc:Ignorable="d"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      >
+    <ScrollViewer HorizontalScrollMode="Disabled" VerticalScrollMode="Enabled" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <StackPanel x:Name="LayoutRoot">
+
+            <TextBlock x:Uid="SetPageBlock1" Text="Not ready yet. TODO " Margin="0,8,17,0"/>
+            <!--TextBox x:Name="fileNameField" Text="DownloadedFile.appxbundle"/-->
+
+            <!--TextBlock Text="Search query: " Margin="0,8,10,0"/>
+            <TextBox x:Name="searchQueryField" InputScope="Url" Text="" />
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,10,0,0">
+                <Button x:Name="StartSearchButton" Content="Search + Multidownload (into Pictures folder)" Margin="0,0,10,0" Click="StartSearch_Click"/>
+               
+            </StackPanel>
+
+            
+            
+            <TextBlock Text="Local file name: " Margin="0,8,17,0"/>
+            <TextBox x:Name="fileNameField" Text="DownloadedFile.appxbundle"/>
+            
+           
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,10,0,0">
+                <Button x:Name="PauseAllButton" Content="Pause All" Margin="0,0,10,0" Click="PauseAll_Click"/>
+                <Button x:Name="ResumeAllButton" Content="Resume All" Margin="0,0,10,0" Click="ResumeAll_Click"/>
+                <Button x:Name="CancelAllButton" Content="Cancel All" Margin="0,0,10,0" Click="CancelAll_Click"/>
+            </StackPanel-->
+            
+            <TextBox x:Name="outputField" AcceptsReturn="True" IsReadOnly="true"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
