@@ -17,8 +17,7 @@
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateThumbprint>
-    </PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>C2F58C85658E6FC3E2E6C5AEDB0934989307454C</PackageCertificateThumbprint>
     <PackageCertificateKeyFile>StoreApp_TemporaryKey.pfx</PackageCertificateKeyFile>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
@@ -202,10 +201,6 @@
     <ProjectReference Include="..\StoreLib\StoreLib.csproj">
       <Project>{a6256be7-6155-4198-b105-911f9195aeb7}</Project>
       <Name>StoreLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tasks\Tasks.csproj">
-      <Project>{a5ab0f13-7ad3-42c2-ba87-3448926c1132}</Project>
-      <Name>Tasks</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
